@@ -1,0 +1,18 @@
+<div class="container w-50 mt-5 text-center">
+  <h2 class="display-3 text-white">Word Limit : {{ limit }}</h2>
+
+  <div class="mt-5 text-center">
+    <input type="range"
+           class="form-control-range slider"
+           min="1"
+           max="50"
+           (click)="handleSlideChange($event.target.value)"
+           value="{{ limit }}" />
+  </div>
+
+  <button (click)="generateWords()" class="btn btn-info">Generate Words</button>
+
+  <div class="card card-body" *ngIf="words">
+    <p class="display-4">{{ words }}</p>
+  </div>
+</div>
